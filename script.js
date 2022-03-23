@@ -1,22 +1,31 @@
 let process = document.querySelector(".cat-list");
 
-async function catApi() {
+//As the api has high no of links(1400) it will take time to display on the screen
+
+async function freeApi() {
     let data;
-    for (let i = 1; i <= 10; i++) {
-        data = await fetch("https://thatcopy.pw/catapi/rest/")
-        let response = await data.json();
-        displayResult(response);
-    }
+
+    data = await fetch("https://api.publicapis.org/entries")
+    let response = await data.json();
+    displayResult(response);
 
 }
-catApi();
+freeApi();//fetching free api's from the link
 
 async function displayResult(response) {
-    process.innerHTML += `<div>
-        <img  class="img-container" src="${await response.url}"/>        
-        </div>`
-}
-let reload = () => {
-    process.innerHTML = ""
-    catApi();
+
+    const { entries } = await response;
+
+    entries.map(value => {
+        process.innerHTML += `
+    <div class="card">
+        <div class="card-header">
+        <h4>${value.API}<h/4>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">Category: ${value.Category}</h6>
+            <p class="card-text">${value.Description}</p>
+            <a href="${value.Link} target="_blank" class="btn btn-primary">Go</a>
+        </div>
+    </div>`})
 }
