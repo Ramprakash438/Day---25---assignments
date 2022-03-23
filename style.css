@@ -12,6 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
 
 .cat-list{
@@ -25,18 +26,13 @@ body{
 
 }
 
-.img-container{
-    width: 400px;
-    height: 400px;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+img{
+    width: 300px;
+    height: 300px;
     transition: 0.2s;
 }
-.img-container:hover{
-   transform: scale(1.2) translateY(40px);
-}
 
-button{
+.btn1{
     border-radius: 20px;
     padding: 10px;
     margin: 20px 0;
@@ -46,7 +42,7 @@ button{
     font-size: 2rem;
 }
 
-button:hover{
+.btn1:hover{
     color: black;
     transform: scale(1.1)
 }
