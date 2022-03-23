@@ -12,6 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
 
 .cat-list{
@@ -19,34 +20,16 @@ body{
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
     height: 100%;
-
+    width: 100%;
 }
 
-.img-container{
-    width: 400px;
-    height: 400px;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    transition: 0.2s;
-}
-.img-container:hover{
-   transform: scale(1.2) translateY(40px);
+.card{
+    min-width: 360px !important;
 }
 
-button{
-    border-radius: 20px;
-    padding: 10px;
-    margin: 20px 0;
-    background-color: rgb(30, 97, 241);
-    transition: 0.2s;
-    color: white;
-    font-size: 2rem;
-}
-
-button:hover{
-    color: black;
-    transform: scale(1.1)
+.header-text{
+    font-size: 2.5rem
 }
